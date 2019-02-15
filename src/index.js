@@ -11,6 +11,7 @@ import {Provider} from 'react-redux'
 
 import reducers from 'reducers'
 import Layout from 'containers/layout'
+import Home from 'containers/home'
 import Motos from 'containers/motos'
 import Moto from 'containers/moto'
 import Basket from 'containers/basket'
@@ -24,8 +25,9 @@ const history = syncHistoryWithStore(browserHistory, store)
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
+      <Route path='/' component={Home}/>
       <Route component={Layout}>
-        <Route path='/' component={Motos}/>
+        <Route path='/catalog' component={Motos}/>
         <Route path='/categories/:id' component={Motos}/>
       </Route>
       <Route path='/motos/:id' component={Moto}/>
