@@ -16,6 +16,7 @@ import Motos from 'containers/motos'
 import Moto from 'containers/moto'
 import Basket from 'containers/basket'
 import Company from 'containers/about_company'
+import Delivery from 'containers/delivery';
 
 const store = createStore(reducers, composeWithDevTools(
   applyMiddleware(thunk)
@@ -34,6 +35,8 @@ ReactDOM.render(
       <Route path='/motos/:id' component={Moto}/>
       <Route path='/basket' component={Basket} />
       <Route path='/about_company' component={Company}/>
+      <Route path='/delivery' component={Delivery}/>
+
     </Router>
   </Provider>,
   document.getElementById('root')
